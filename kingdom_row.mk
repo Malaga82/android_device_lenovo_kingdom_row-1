@@ -320,6 +320,9 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxxhdpi-3072-dal
 # call hwui memory config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxxhdpi-3072-hwui-memory.mk)
 
+# call qcom hardware setup
+$(call inherit-product-if-exists, hardware/qcom/msm8x74/msm8x74.mk)
+
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/lenovo/kingdom_row/kingdom_row-vendor.mk)
 
