@@ -138,7 +138,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8974
+    lights.kingdom_row
 
 # IPC Security config
 PRODUCT_COPY_FILES += \
