@@ -1,4 +1,5 @@
-# Copyright (C) 2016 The CyanogenMod Project
+#
+# Copyright 2014 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,30 +12,23 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from kingdom_row device
 $(call inherit-product, device/lenovo/kingdom_row/kingdom_row.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
-
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
-
-PRODUCT_NAME := cm_kingdom_row
+PRODUCT_NAME := aosp_kingdom_row
 PRODUCT_DEVICE := kingdom_row
+PRODUCT_BRAND := Lenovo
+PRODUCT_MODEL := AOSP on K920
 PRODUCT_MANUFACTURER := Lenovo
-PRODUCT_MODEL := K920
 
 PRODUCT_GMS_CLIENTID_BASE := android-lenovo
 
-PRODUCT_BRAND := Lenovo
 TARGET_VENDOR := lenovo
 TARGET_VENDOR_PRODUCT_NAME := kingdom_row
 TARGET_VENDOR_DEVICE_NAME := kingdom_row
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=kingdom_row PRODUCT_NAME=kingdom_row
-
-TARGET_UNOFFICIAL_BUILD_ID := frantisheq
