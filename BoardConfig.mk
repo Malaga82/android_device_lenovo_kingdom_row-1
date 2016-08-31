@@ -188,6 +188,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # Use HW crypto for ODE
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := $(DEVICE_PATH)/cryptfs_hw
 
 # Added to indicate that protobuf-c is supported in this build
 PROTOBUF_SUPPORTED := true
