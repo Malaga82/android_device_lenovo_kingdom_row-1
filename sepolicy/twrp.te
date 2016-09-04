@@ -1,0 +1,15 @@
+# Additional rules for TWRP
+
+allow recovery media_rw_data_file:dir { create open getattr setattr read write unlink rename search add_name remove_name reparent rmdir lock ioctl};
+allow recovery media_rw_data_file:file { create open getattr setattr read write append rename link unlink ioctl lock relabelto relabelfrom };
+allow recovery rootfs:fifo_file { create open getattr setattr read write append rename link unlink ioctl lock };
+allow recovery rootfs:lnk_file { create open getattr setattr read write append rename link unlink ioctl lock };
+allow recovery vold_prop:property_service set;
+allow recovery firmware_file:file r_file_perms;
+allow recovery dm_device:chr_file rw_file_perms;
+allow recovery mtp_device:chr_file rw_file_perms;
+allow recovery time_data_file:file r_file_perms;
+allow recovery app_data_file:dir open;
+allow recovery recovery:capability sys_time;
+allow kernel recovery:fd use;
+
