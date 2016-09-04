@@ -27,7 +27,6 @@ on init
     mkdir /cache
     mkdir /persist
     mkdir /preload
-    mkdir /firmware
     mkdir /aboot
     mkdir /boot
     mkdir /recovery

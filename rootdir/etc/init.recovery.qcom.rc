@@ -1,6 +1,9 @@
 on firmware_mounts_complete
    rm /dev/.booting
 
+on early-init
+    mkdir /firmware 0771 system system
+
 on late-init
     # Remove a file to wake up anything waiting for firmware.
     trigger firmware_mounts_complete
@@ -14,6 +17,10 @@ service sbinqseecomd /sbin/qseecomd
     seclabel u:r:recovery:s0
 
 on fs
+    # Mount /firmware
+    wait /dev/block/bootdevice/by-name/modem
+    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0
+
     chmod 0664 /dev/qseecom
     chown system drmrpc /dev/qseecom
     chmod 0664 /dev/ion
