@@ -23,7 +23,7 @@ const char *mr_init_devices[] =
 	"/sys/devices/gpio_keys.83/input*",
 	"/sys/devices/virtual/input*",
 	"/sys/devices/virtual/misc/uinput",
-	"/sys/devices/f9924000.i2c/i2c-2/2-0020/input*",
+	"/sys/devices/f9924000.i2c/i2c-2/2-0038/input*",
 	
 	// USB drive
 	"/sys/bus/platform/drivers/xhci-hcd*",
