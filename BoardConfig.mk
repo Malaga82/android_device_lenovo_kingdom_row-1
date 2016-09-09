@@ -178,6 +178,26 @@ TW_INCLUDE_FB2PNG := true
 TW_MAX_BRIGHTNESS := 255
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 
+# MultiROM
+TARGET_RECOVERY_IS_MULTIROM := true
+MR_INPUT_TYPE := type_a
+MR_INIT_DEVICES := $(DEVICE_PATH)/multirom/mr_init_devices.c
+MR_DPI := xhdpi
+MR_DPI_MUL := 2
+MR_DPI_FONT := 380
+MR_FSTAB := $(DEVICE_PATH)/recovery/root/etc/twrp.fstab
+MR_USE_MROM_FSTAB := true
+MR_KEXEC_MEM_MIN := 0x02000000
+MR_KEXEC_DTB := true
+MR_DEVICE_HOOKS := $(DEVICE_PATH)/multirom/mr_hooks.c
+MR_DEVICE_HOOKS_VER := 4
+MR_CONTINUOUS_FB_UPDATE := true
+MR_USE_QCOM_OVERLAY := true
+MR_QCOM_OVERLAY_HEADER := $(DEVICE_PATH)/include/framebuffer_qcom_overlay.h
+MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
+MR_PIXEL_FORMAT := "RGBX_8888"
+MR_ENCRYPTION := true
+
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
