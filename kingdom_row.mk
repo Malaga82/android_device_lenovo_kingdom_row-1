@@ -109,7 +109,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
 # Filesystem
 PRODUCT_PACKAGES += \
-    make_ext4fs \
     setup_fs
 
 # FM
@@ -219,9 +218,7 @@ PRODUCT_PACKAGES += \
 
 # Performance
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.perf.cores_online=2 \
-    ro.sys.fw.bg_apps_limit=32
-
+    ro.qualcomm.perf.cores_online=2
 # Permissions
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
@@ -280,21 +277,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
 
-# Time services
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true
-
-# USB
-PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
-
-# USB OTG
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.isUsbOtgEnabled=true
-
 # WiFi
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)//wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
