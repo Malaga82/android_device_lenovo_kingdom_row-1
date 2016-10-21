@@ -74,3 +74,6 @@ ro.qti.sensors.scrn_ortn=true
 
 # Wifi
 wifi.interface=wlan0
+
+# OTA Server URL
+cm.updater.uri=http://cmserver.malaga.cloud/api
